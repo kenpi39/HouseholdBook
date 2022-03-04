@@ -11,7 +11,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/title3"
+            android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView"
@@ -19,7 +19,7 @@
             android:textSize="18sp" />
 
         <Button
-            android:id="@+id/daySelect"
+            android:id="@+id/daySelectButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Button" />
@@ -199,32 +199,31 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/inputPage3"
-            android:layout_width="match_parent"
+            android:id="@+id/mainPageButton"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Button" />
 
         <Button
-            android:id="@+id/calendarPage3"
-            android:layout_width="match_parent"
+            android:id="@+id/calendarPageButton"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Button" />
 
         <Button
-            android:id="@+id/reportPage3"
-            android:layout_width="match_parent"
+            android:id="@+id/reportPageButton"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Button" />
 
         <Button
-            android:id="@+id/othersPage3"
-            android:layout_width="match_parent"
+            android:id="@+id/othersPageButton"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Button" />
     </LinearLayout>
-
 </android.support.constraint.ConstraintLayout>

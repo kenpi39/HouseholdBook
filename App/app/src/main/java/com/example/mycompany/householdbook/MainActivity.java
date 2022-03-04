@@ -44,8 +44,45 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button mainPageButton = findViewById(R.id.mainPageButton);
 
+        mainPageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+            }
+        });
+
+        Button calendarPageButton = findViewById(R.id.calendarPageButton);
+
+        calendarPageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, CalendarActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button reportPageButton = findViewById(R.id.reportPageButton);
+
+        reportPageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ReportActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button othersPageButton = findViewById(R.id.othersPageButton);
+
+        othersPageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, OthersActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
 
 
     }

@@ -31,21 +31,25 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Name" />
+            android:text="メモ" />
 
-        <Button
+        <EditText
             android:id="@+id/amounts"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:ems="10"
+            android:inputType="number"
+            android:text="金額"
+            android:digits="0123456789" />
 
         <TextView
             android:id="@+id/tag"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="タグ" />
 
         <LinearLayout
-            android:id="@+id/bottom"
+            android:id="@+id/tagline"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"></LinearLayout>

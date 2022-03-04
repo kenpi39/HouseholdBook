@@ -16,6 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".CalendarActivity"/>
+        <activity android:name=".ReportActivity"/>
+        <activity android:name=".OthersActivity"/>
+        <activity android:name=".HelpActivity"/>
+        <activity android:name=".FixedSpendingActivity"/>
+        <activity android:name=".CreateNewActivity"/>
     </application>
 
 </manifest>

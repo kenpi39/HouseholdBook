@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">HouseholdBook</string>
+    <string name="title_main">支出入力</string>
+    <string name="title_calendar">カレンダー</string>
+    <string name="title_report">レポート</string>
+    <string name="title_others">その他</string>
+    <string name="title_help">使い方・ヘルプ</string>
+    <string name="title_fixed_spending">固定支出</string>
+    <string name="title_create_new">新規作成</string>
 </resources>

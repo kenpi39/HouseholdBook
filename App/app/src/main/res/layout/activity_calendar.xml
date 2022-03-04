@@ -14,7 +14,7 @@
             android:id="@+id/title2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView"
+            android:text="@string/title_calendar"
             android:textAlignment="center"
             android:textSize="18sp" />
 

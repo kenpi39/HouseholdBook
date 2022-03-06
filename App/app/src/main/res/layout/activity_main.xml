@@ -30,8 +30,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="メモ" />
+            android:inputType="text"
+            android:hint="メモ"/>
 
         <EditText
             android:id="@+id/amounts"
@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="number"
-            android:text="金額"
+            android:hint="金額"
             android:digits="0123456789" />
 
         <TextView

@@ -15,8 +15,9 @@ public class OthersActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_others);
-        /*Button mainPageButton = findViewById(R.id.mainPageButton);
 
+        Button mainPageButton = findViewById(R.id.mainPageButton);
+        mainPageButton.setText("支出入力");
         mainPageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -26,7 +27,7 @@ public class OthersActivity extends AppCompatActivity {
         });
 
         Button calendarPageButton = findViewById(R.id.calendarPageButton);
-
+        calendarPageButton.setText("カレンダー");
         calendarPageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -36,7 +37,7 @@ public class OthersActivity extends AppCompatActivity {
         });
 
         Button reportPageButton = findViewById(R.id.reportPageButton);
-
+        reportPageButton.setText("レポート");
         reportPageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,12 +47,12 @@ public class OthersActivity extends AppCompatActivity {
         });
 
         Button othersPageButton = findViewById(R.id.othersPageButton);
-
+        othersPageButton.setText("その他");
         othersPageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
             }
-        });*/
+        });
     }
 }

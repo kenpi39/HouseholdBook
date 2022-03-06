@@ -27,7 +27,7 @@ public class ReportActivity extends AppCompatActivity {
         yearMonthText.setText(year + "年" + month + "月");
 
         Button lastMonthButton = findViewById(R.id.lastMonthButton);
-
+        lastMonthButton.setText("先月");
         lastMonthButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -37,7 +37,7 @@ public class ReportActivity extends AppCompatActivity {
         });
 
         Button nextMonthButton = findViewById(R.id.nextMonthButton);
-
+        nextMonthButton.setText("翌月");
         nextMonthButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

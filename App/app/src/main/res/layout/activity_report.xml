@@ -56,7 +56,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@id/BottomLayout"
+        app:layout_constraintBottom_toTopOf="@id/bottomLayout"
         app:layout_constraintTop_toBottomOf="@id/reportTopLayout">
 
         <com.github.mikephil.charting.charts.PieChart
@@ -75,7 +75,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/BottomLayout"
+        android:id="@+id/bottomLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"

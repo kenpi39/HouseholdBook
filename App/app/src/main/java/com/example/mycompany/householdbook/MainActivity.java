@@ -2,7 +2,9 @@ package com.example.mycompany.householdbook;
 
 import android.app.DatePickerDialog;
 import android.icu.util.Calendar;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;

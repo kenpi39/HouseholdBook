@@ -30,7 +30,6 @@
             android:id="@+id/memo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
             android:inputType="text"
             android:hint="メモ"/>
 
@@ -38,7 +37,6 @@
             android:id="@+id/amounts"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
             android:inputType="number"
             android:hint="金額"
             android:digits="0123456789" />
@@ -49,11 +47,116 @@
             android:layout_height="wrap_content"
             android:text="タグ" />
 
-        <LinearLayout
-            android:id="@+id/tagline"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"></LinearLayout>
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <RadioGroup
+                android:id="@+id/tagRadioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/tagButton1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/tb1" />
+
+                <RadioButton
+                    android:id="@+id/tagButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/tb2" />
+
+                <RadioButton
+                    android:id="@+id/tagButton3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/tb3" />
+
+                <RadioButton
+                    android:id="@+id/tagButton4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/tb4" />
+
+                <RadioButton
+                    android:id="@+id/tagButton5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/tb5" />
+
+                <RadioButton
+                    android:id="@+id/tagButton6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/tb6" />
+
+                <RadioButton
+                    android:id="@+id/tagButton7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/tb7" />
+
+                <RadioButton
+                    android:id="@+id/tagButton8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/tb8" />
+
+                <RadioButton
+                    android:id="@+id/tagButton9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/tb9" />
+
+                <RadioButton
+                    android:id="@+id/tagButton10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/tb10" />
+
+                <RadioButton
+                    android:id="@+id/tagButton11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/tb11" />
+
+                <RadioButton
+                    android:id="@+id/tagButton12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/tb12" />
+
+                <RadioButton
+                    android:id="@+id/tagButton13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/tb13" />
+
+                <RadioButton
+                    android:id="@+id/tagButton14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/tb14" />
+
+            </RadioGroup>
+        </ScrollView>
 
 
     </LinearLayout>

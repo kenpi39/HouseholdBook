@@ -7,4 +7,18 @@
     <string name="title_help">使い方・ヘルプ</string>
     <string name="title_fixed_spending">固定支出</string>
     <string name="title_create_new">新規作成</string>
+    <string name="tb1">食費</string>
+    <string name="tb2">日用品</string>
+    <string name="tb3">娯楽費</string>
+    <string name="tb4">交際費</string>
+    <string name="tb5">交通費</string>
+    <string name="tb6">住居費</string>
+    <string name="tb7">光熱費</string>
+    <string name="tb8">通信料</string>
+    <string name="tb9">車両費</string>
+    <string name="tb10">医療費</string>
+    <string name="tb11">被服費</string>
+    <string name="tb12">美容費</string>
+    <string name="tb13">学費</string>
+    <string name="tb14">雑費</string>
 </resources>

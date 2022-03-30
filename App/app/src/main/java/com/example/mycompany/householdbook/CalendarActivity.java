@@ -24,6 +24,8 @@ public class CalendarActivity extends AppCompatActivity {
     private int selectYear;
     private int selectMonth;
     private int selectDay;
+    private int headerYear;
+    private int headerMonth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +35,26 @@ public class CalendarActivity extends AppCompatActivity {
         final Calendar calendar = Calendar.getInstance();
         int year = calendar.get(Calendar.YEAR);
         int month = calendar.get(Calendar.MONTH) + 1;
+        headerYear = year;
+        headerMonth = month;
+
         CalendarView calendarView = findViewById(R.id.calendarView);
+        calendarView.setOnPreviousPageChangeListener(new OnCalendarPageChangeListener() {
+            @Override
+            public void onChange() {
+                if(headerMonth <= 1){
+                    headerYear--;
+                    headerMonth = 12;
+                }else {
+                    headerMonth--;
+                }
+                //TODO:一か月の総支出額を変更する機能の追加
+                ListView spendingList = findViewById(R.id.spendingList);
+                String[] spendingData = {};
+                ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(calendarActivity, android.R.layout.simple_list_item_1, spendingData);
+                spendingList.setAdapter(arrayAdapter);
+            }
+        });
         calendarView.setOnDayClickListener(new OnDayClickListener() {
             @Override
             public void onDayClick(EventDay eventDay) {

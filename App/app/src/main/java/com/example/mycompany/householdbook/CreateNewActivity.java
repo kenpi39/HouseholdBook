@@ -99,6 +99,35 @@ public class CreateNewActivity extends AppCompatActivity {
                 dialog.show();
             }
         });
+
+        Button setHolidayButton = findViewById(R.id.setHolidayButton);
+        setHolidayButton.setText("土日祝日の場合：");
+        setHolidayButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(createNew);
+                builder.setTitle("土日祝日の場合")
+                        .setItems(new CharSequence[]{
+                                "何もしない", "該当の日を直前の平日にする", "該当の日を直後の平日にする", "キャンセル"}, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                if(which == 0){
+                                    setHolidayButton.setText("土日祝日の場合：何もしない");
+                                }else if (which == 1){
+                                    //TODO:該当の日を直前の平日にする
+                                    setHolidayButton.setText("土日祝日の場合：該当の日を直前の平日にする");
+                                }else if (which == 2){
+                                    //TODO:該当の日を直後の平日にする
+                                    setHolidayButton.setText("土日祝日の場合：該当の日を直後の平日にする");
+                                }else {
+
+                                }
+                            }
+                        }
+                );
+                AlertDialog dialog = builder.create();
+                dialog.show();
+            }
+        });
         Button mainPageButton = findViewById(R.id.mainPageButton);
         mainPageButton.setText("支出入力");
         mainPageButton.setOnClickListener(new View.OnClickListener() {

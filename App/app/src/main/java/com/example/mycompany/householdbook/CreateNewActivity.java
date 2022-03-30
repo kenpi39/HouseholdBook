@@ -20,6 +20,7 @@ public class CreateNewActivity extends AppCompatActivity {
     int selectedEndYear;
     int selectedEndMonth;
     int selectedEndDay;
+    String returnStr;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,6 +67,36 @@ public class CreateNewActivity extends AppCompatActivity {
                             }
                         }, year, month, day);
                 datePickerDialog.show();
+            }
+        });
+
+        Button setReturnButton = findViewById(R.id.setReturnButton);
+        setReturnButton.setText("繰り返し方法：");
+        setReturnButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(createNew);
+                builder.setTitle("繰り返し方法")
+                        .setItems(new CharSequence[]{
+                                "毎日", "毎週", "毎月", "キャンセル"}, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                if(which == 0){
+                                    returnStr = "everyDay";
+                                    setReturnButton.setText("繰り返し方法：毎日");
+                                }else if (which == 1){
+                                    returnStr = "everyWeek";
+                                    setReturnButton.setText("繰り返し方法：毎週");
+                                }else if (which == 2){
+                                    returnStr = "everyMonth";
+                                    setReturnButton.setText("繰り返し方法：毎月");
+                                }else {
+
+                                }
+                            }
+                        }
+                );
+                AlertDialog dialog = builder.create();
+                dialog.show();
             }
         });
         Button mainPageButton = findViewById(R.id.mainPageButton);

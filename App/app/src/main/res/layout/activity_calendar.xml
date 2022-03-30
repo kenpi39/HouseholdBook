@@ -19,10 +19,15 @@
             android:textAlignment="center"
             android:textSize="18sp" />
 
-        <CalendarView
+        <com.applandeo.materialcalendarview.CalendarView
             android:id="@+id/calendarView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            app:eventsEnabled="true"
+            app:swipeEnabled="false"
+            app:type="one_day_picker"
+            app:pagesColor="#ffffff"
+            app:anotherMonthsDaysLabelsColor="#ffffff"/>
 
         <TextView
             android:id="@+id/totalSpending"

@@ -17,6 +17,9 @@ public class CreateNewActivity extends AppCompatActivity {
     int selectedStartYear;
     int selectedStartMonth;
     int selectedStartDay;
+    int selectedEndYear;
+    int selectedEndMonth;
+    int selectedEndDay;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +50,24 @@ public class CreateNewActivity extends AppCompatActivity {
             }
         });
 
+        Button setEndButton = findViewById(R.id.setEndButton);
+        setEndButton.setText("終了日：");
+        setEndButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final DatePickerDialog datePickerDialog = new DatePickerDialog(createNew,
+                        new DatePickerDialog.OnDateSetListener() {
+                            @Override
+                            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                                setEndButton.setText("終了日：" + getDateString(year, monthOfYear, dayOfMonth));
+                                selectedEndYear = year;
+                                selectedEndMonth = monthOfYear + 1;
+                                selectedEndDay = dayOfMonth;
+                            }
+                        }, year, month, day);
+                datePickerDialog.show();
+            }
+        });
         Button mainPageButton = findViewById(R.id.mainPageButton);
         mainPageButton.setText("支出入力");
         mainPageButton.setOnClickListener(new View.OnClickListener() {

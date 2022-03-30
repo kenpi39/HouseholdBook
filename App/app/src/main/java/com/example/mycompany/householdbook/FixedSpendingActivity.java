@@ -5,10 +5,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-
-/**
- * Created by user on 2022/02/10.
- */
+import android.widget.ListView;
 
 public class FixedSpendingActivity extends AppCompatActivity {
     @Override
@@ -16,6 +13,17 @@ public class FixedSpendingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fixed_spending);
 
+        Button createNewButton = findViewById(R.id.createNewButton);
+        createNewButton.setText("新規作成");
+        createNewButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(FixedSpendingActivity.this, CreateNewActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //TODO:固定支出の一覧を表示
         Button mainPageButton = findViewById(R.id.mainPageButton);
         mainPageButton.setText("支出入力");
         mainPageButton.setOnClickListener(new View.OnClickListener() {

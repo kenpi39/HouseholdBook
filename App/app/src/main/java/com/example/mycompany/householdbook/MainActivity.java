@@ -19,6 +19,7 @@ import static android.icu.util.Calendar.getInstance;
 
 public class MainActivity extends AppCompatActivity {
     private MainActivity main;
+    private Common common;
     int selectedYear;
     int selectedMonth;
     int selectedDay;
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         main = this;
+        common = (Common)this.getApplication();
         final Calendar calendar = getInstance();
         final int year = calendar.get(Calendar.YEAR);
         final int month = calendar.get(Calendar.MONTH);

@@ -111,10 +111,9 @@ public class ReportActivity extends AppCompatActivity {
         });
     }
 
-    public void setMonth(Calendar calendar){
-        int year = calendar.get(Calendar.YEAR);
-        int month = calendar.get(Calendar.MONTH) + 1;
-
+    private void setMonth(Calendar calendar) {
+        year = calendar.get(Calendar.YEAR);
+        month = calendar.get(Calendar.MONTH) + 1;
         TextView yearMonthText = findViewById(R.id.yearMonthText);
         yearMonthText.setText(year + "年" + month + "月");
     }

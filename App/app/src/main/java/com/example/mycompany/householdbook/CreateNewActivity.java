@@ -58,4 +58,8 @@ public class CreateNewActivity extends AppCompatActivity {
             }
         });
     }
+
+    private  String getDateString(int year, int month , int day){
+        return year + "年" + (month + 1) + "月" + day + "日";
+    }
 }

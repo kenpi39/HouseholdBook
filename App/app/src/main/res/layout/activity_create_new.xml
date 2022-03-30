@@ -22,10 +22,34 @@
             android:layout_width="match_parent"
             android:layout_height="18dp" />
 
-        <Button
-            android:id="@+id/setTitle"
+        <EditText
+            android:id="@+id/setTitleText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="text"
+            android:hint="タイトル"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="18dp" />
+
+        <EditText
+            android:id="@+id/setAmountsText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="金額"
+            android:digits="0123456789" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="18dp" />
+
+        <Button
+            android:id="@+id/setStartButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="fill"
             android:text="Button" />
 
         <Space
@@ -33,9 +57,10 @@
             android:layout_height="18dp" />
 
         <Button
-            android:id="@+id/setAmounts"
+            android:id="@+id/setEndButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="fill"
             android:text="Button" />
 
         <Space
@@ -43,9 +68,10 @@
             android:layout_height="18dp" />
 
         <Button
-            android:id="@+id/setReturn"
+            android:id="@+id/setReturnButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="fill|left"
             android:text="Button" />
 
         <Space
@@ -53,29 +79,10 @@
             android:layout_height="18dp" />
 
         <Button
-            android:id="@+id/setStart"
+            android:id="@+id/setHolidayButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="18dp" />
-
-        <Button
-            android:id="@+id/setEnd"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Button" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="18dp" />
-
-        <Button
-            android:id="@+id/setHoliday"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:gravity="fill"
             android:text="Button" />
 
         <Space

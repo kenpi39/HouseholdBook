@@ -4,24 +4,42 @@ import android.content.Intent;
 import android.icu.util.Calendar;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
-
-/**
- * Created by user on 2022/02/04.
- */
+import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.data.PieData;
+import com.github.mikephil.charting.data.PieDataSet;
+import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.utils.ColorTemplate;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class ReportActivity extends AppCompatActivity {
+    private ReportActivity report;
+    final Calendar calendar = Calendar.getInstance();
+    private int year = calendar.get(Calendar.YEAR);
+    private int month = calendar.get(Calendar.MONTH) + 1;
+    private HbDataManager hdm = new HbDataManager();
+    private String tagsOriginal[] = {"食費", "日用品", "娯楽費", "交際費","交通費", "住居費", "光熱費", "通信費", "車両費",
+            "医療費", "被服費", "美容費", "学費", "雑費"};
+    private String tags[];
+    private int amounts[];
+    private List<String> spendingArray = new ArrayList<>();
+    private List<PieEntry> pieEntries = new ArrayList<>();;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_report);
-
-        final Calendar calendar = Calendar.getInstance();
-        int year = calendar.get(Calendar.YEAR);
-        int month = calendar.get(Calendar.MONTH) + 1;
+        report = this;
 
         TextView yearMonthText = findViewById(R.id.yearMonthText);
         yearMonthText.setText(year + "年" + month + "月");
@@ -93,5 +111,57 @@ public class ReportActivity extends AppCompatActivity {
 
         TextView yearMonthText = findViewById(R.id.yearMonthText);
         yearMonthText.setText(year + "年" + month + "月");
+    }
+
+    private void setupPieChart() {
+        pieEntries.clear();
+        spendingArray.clear();
+        hdm.setSpendingDataBetweenDate(year, month);
+        tags = tagsOriginal;
+        amounts = new int[14];
+        Timer timer = new Timer();
+        TimerTask tt = new TimerTask() {
+            @Override
+            public void run() {
+                final Handler mainHandler = new Handler(Looper.getMainLooper());
+                if (hdm.fReadComplete) {
+                    mainHandler.post(() -> {
+                        for (int i = 0; i < hdm.readAmountList.size(); i++) {
+                            String tag = hdm.readTagList.get(i);
+                            int index = Arrays.asList(tags).indexOf(tag);
+                            amounts[index] += hdm.readAmountList.get(i);
+                        }
+                        for (int i = 0; i < amounts.length; i++){
+                            if (amounts[i] == 0){
+                                tags[i] = "";
+                            }
+                        }
+                        for (int i = 0; i < amounts.length; i++) {
+                            pieEntries.add(new PieEntry(amounts[i], tags[i]));
+                        }
+                        PieDataSet dataSet = new PieDataSet(pieEntries, "datas");
+                        dataSet.setColors(ColorTemplate.COLORFUL_COLORS);
+                        dataSet.setValueTextSize(0f);
+                        PieData data = new PieData(dataSet);
+                        PieChart piechart = (PieChart) findViewById(R.id.pieChart);
+                        piechart.setData(data);
+                        piechart.getDescription().setEnabled(false);
+                        piechart.getLegend().setEnabled(false);
+                        piechart.invalidate();
+                        //TODO:spendingListに表示させるものをタグだけでなくユーザー名でも分けるようにする
+                        for (int i = 0; i < amounts.length; i++){
+                            if (amounts[i] != 0){
+                                spendingArray.add(tags[i] + " " + amounts[i] + "円");
+                            }
+                        }
+                        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(report, android.R.layout.simple_list_item_1, spendingArray);
+                        ListView spendingList = findViewById(R.id.spendingList);
+                        spendingList.setAdapter(arrayAdapter);
+                        timer.cancel();
+                    });
+                }
+            }
+        };
+        timer.schedule(tt, 0, 200);
     }
 }

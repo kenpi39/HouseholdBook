@@ -13,6 +13,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import static android.icu.util.Calendar.getInstance;
 
 public class MainActivity extends AppCompatActivity {
@@ -51,6 +53,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        RadioGroup tagRadioGroup = findViewById(R.id.tagRadioGroup);
+        int checkedId = tagRadioGroup.getCheckedRadioButtonId();
 
         Button mainPageButton = findViewById(R.id.mainPageButton);
         mainPageButton.setText("支出入力");

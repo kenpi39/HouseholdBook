@@ -55,6 +55,24 @@ public class CalendarActivity extends AppCompatActivity {
                 spendingList.setAdapter(arrayAdapter);
             }
         });
+
+        calendarView.setOnForwardPageChangeListener(new OnCalendarPageChangeListener() {
+            @Override
+            public void onChange() {
+                if (headerMonth >= 12){
+                    headerYear++;
+                    headerMonth = 1;
+                }else {
+                    headerMonth++;
+                }
+                //TODO:一か月の総支出額を変更する機能の追加
+                String[] spendingData = {};
+                ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(calendarActivity, android.R.layout.simple_list_item_1, spendingData);
+                ListView spendingList = findViewById(R.id.spendingList);
+                spendingList.setAdapter(arrayAdapter);
+            }
+        });
+
         calendarView.setOnDayClickListener(new OnDayClickListener() {
             @Override
             public void onDayClick(EventDay eventDay) {

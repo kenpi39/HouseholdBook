@@ -128,6 +128,20 @@ public class CreateNewActivity extends AppCompatActivity {
                 dialog.show();
             }
         });
+
+        Button finishButton = findViewById(R.id.finishButton);
+        finishButton.setText("入力完了");
+        finishButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //TODO:タイトルの文字取得
+                //TODO:金額取得
+                //TODO:開始日取得
+                //TODO:終了日取得
+                //TODO:土日祝日の場合と繰り返し方法に従ってデータベースに登録
+            }
+        });
+
         Button mainPageButton = findViewById(R.id.mainPageButton);
         mainPageButton.setText("支出入力");
         mainPageButton.setOnClickListener(new View.OnClickListener() {

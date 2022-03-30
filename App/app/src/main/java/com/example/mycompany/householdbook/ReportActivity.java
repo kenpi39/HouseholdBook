@@ -49,8 +49,12 @@ public class ReportActivity extends AppCompatActivity {
         lastMonthButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //FIXME:先月へ移動するとアプリが落ちる
+                //java.lang.ArrayIndexOutOfBoundsException: length=14; index=-1
+                //ReportActivity.java:153
                 calendar.add(Calendar.MONTH, -1);
                 setMonth(calendar);
+                setupPieChart();
             }
         });
 
@@ -61,9 +65,11 @@ public class ReportActivity extends AppCompatActivity {
             public void onClick(View v) {
                 calendar.add(Calendar.MONTH, 1);
                 setMonth(calendar);
+                setupPieChart();
             }
         });
 
+        setupPieChart();
 
         Button mainPageButton = findViewById(R.id.mainPageButton);
         mainPageButton.setText("支出入力");

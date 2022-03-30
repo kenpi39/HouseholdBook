@@ -4,11 +4,10 @@ import android.app.DatePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.icu.util.Calendar;
-
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.SpannableStringBuilder;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -20,6 +19,7 @@ import static android.icu.util.Calendar.getInstance;
 public class MainActivity extends AppCompatActivity {
     private MainActivity main;
     private Common common;
+    private HbDataManager hdm = new HbDataManager();
     int selectedYear;
     int selectedMonth;
     int selectedDay;
@@ -57,6 +57,45 @@ public class MainActivity extends AppCompatActivity {
 
         RadioGroup tagRadioGroup = findViewById(R.id.tagRadioGroup);
         int checkedId = tagRadioGroup.getCheckedRadioButtonId();
+
+        final Button finishButton = findViewById(R.id.finishButton);
+        finishButton.setText("入力完了");
+        finishButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EditText memoText = findViewById(R.id.memo);
+                SpannableStringBuilder sbm = (SpannableStringBuilder)memoText.getText();
+                String memo = sbm.toString();
+
+                RadioGroup tagRadioGroup = findViewById(R.id.tagRadioGroup);
+                int checkedId = tagRadioGroup.getCheckedRadioButtonId();
+                String tag = "";
+                RadioButton radioButton = (RadioButton) findViewById(checkedId);
+                tag = radioButton.getText().toString();
+
+                EditText amountsText = findViewById(R.id.amounts);
+                SpannableStringBuilder sba = (SpannableStringBuilder)amountsText.getText();
+                String str = sba.toString();
+
+                int amounts = Integer.parseInt(sba.toString());
+
+                if (common.getUserName() == null){
+                    new AlertDialog.Builder(main)
+                            .setTitle("ユーザー名の未設定")
+                            .setMessage("ユーザー名を設定してください")
+                            .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    Intent intent = new Intent(main, OthersActivity.class);
+                                    startActivity(intent);
+                                }
+                            })
+                            .show();
+                }else {
+                    hdm.addDbData(selectedYear, selectedMonth, selectedDay, common.getUserName(), memo, tag, amounts);
+                }
+            }
+        });
 
         Button mainPageButton = findViewById(R.id.mainPageButton);
         mainPageButton.setText("支出入力");

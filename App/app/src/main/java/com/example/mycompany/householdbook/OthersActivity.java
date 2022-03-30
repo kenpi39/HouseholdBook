@@ -10,13 +10,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-/**
- * Created by user on 2022/02/10.
- */
-
 public class OthersActivity extends AppCompatActivity {
-    OthersActivity other;
+    private OthersActivity other;
     private Common common;
+    private HbDataManager hdm = new HbDataManager();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,7 +76,7 @@ public class OthersActivity extends AppCompatActivity {
                         .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                //TODO:データベースの全てのデータを消去
+                                hdm.resetDbData();
                             }
                         })
                         .setNegativeButton("Cancel", null)

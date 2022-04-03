@@ -9,23 +9,23 @@ HouseholdBookは複数人で使用することを目的とした家計簿アプ�
 データの入力ができます。  
 日付、メモ、金額、タグを入力・選択して入力完了ボタンを押すと入力完了です。  
 
-<img scr="https://user-images.githubusercontent.com/102669119/161408056-e2559739-1394-4a9b-8108-6dbc10cb7025.png"  width=20%>
+![MainActivity](https://user-images.githubusercontent.com/102669119/161408454-e64edd28-cb8f-4d90-90ec-92a45a4c5f3c.png)
 
 2.カレンダー  
 カレンダーの日付をタップすると下部にその日の支出情報が一覧表示されます。  
 
-<img scr="https://user-images.githubusercontent.com/102669119/161408066-6705432e-8d5f-4eed-8990-ea0b8a25557f.png"  width=20%>
+![CalendarActivity](https://user-images.githubusercontent.com/102669119/161408459-88955120-9e69-4bfe-a29b-aaebef0748dd.png)
 
 3.レポート  
 一か月の支出情報をタグごとに円グラフで見ることができます。  
 下部には支出情報がタグごとに一覧表示されます。  
 
-<img scr="https://user-images.githubusercontent.com/102669119/161408072-e890bc21-dc0c-437f-a961-b4296fa77b28.png"  width=20%>
+![ReportActivity](https://user-images.githubusercontent.com/102669119/161408460-ea0ad990-c9d1-43af-b29e-810463dcdac5.png)
 
 4.その他  
 ヘルプ画面や固定支出画面への遷移、ユーザー名の設定ができます。  
 
-<img scr="https://user-images.githubusercontent.com/102669119/161408073-af8a8363-8cec-42a8-ad0a-a778c78651ea.png"  width=20%>
+![OthersActivity](https://user-images.githubusercontent.com/102669119/161408462-5d8d03ef-dd32-4dcd-a9de-af973901346e.png)
 
 # 今後の実装予定
 

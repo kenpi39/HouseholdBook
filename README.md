@@ -41,4 +41,4 @@ HouseholdBookは複数人で使用することを目的とした家計簿アプ�
 ・Android Studio Bumblebee | 2021.1.1 Patch 2  
 ・java version 1.7.0_80  
 ・Firebase Firestore database  
-・Sourcetree version 3.4.5.0  
+・Sourcetree version 3.4.5.0 (Bitbucket,GitHub)  
